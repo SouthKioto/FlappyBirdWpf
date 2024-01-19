@@ -1,0 +1,24 @@
+﻿<Window x:Class="FlappyBirdWpf.GameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlappyBirdWpf"
+        mc:Ignorable="d"
+        Title="GameWindow" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen"
+        PreviewKeyDown="BirdUp_KeyDown"
+        PreviewKeyUp="BirdDown_KeyUp">
+    <Grid Background="DeepSkyBlue">
+
+        <Canvas x:Name="GameCanvas" Background="DeepSkyBlue">
+            <Image x:Name="birdImage" Source="images/bird.png" Width="50" Height="50" Canvas.Left="100" Canvas.Top="150"/>
+            
+
+            <Label x:Name="timerLabel" Content="00:00" Width="100" Height="30" Canvas.Left="20" Canvas.Top="20" FontSize="16"/>
+
+            <Image x:Name="ground" Source="images/ground.png" Width="800" Canvas.Top="275" Canvas.Left="0"/>
+        </Canvas>
+
+    </Grid>
+</Window>

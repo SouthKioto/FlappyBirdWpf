@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="images\bird.png" />
+    <None Remove="images\ground.png" />
+    <None Remove="images\pipe_down.jpg" />
+    <None Remove="images\pipe_up.jpg" />
+    <None Remove="images\play.png" />
+    <None Remove="images\ranking.png" />
+    <None Remove="images\settings.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\bird.png" />
+    <Resource Include="images\ground.png" />
+    <Resource Include="images\pipe_down.jpg" />
+    <Resource Include="images\pipe_up.jpg" />
+    <Resource Include="images\play.png" />
+    <Resource Include="images\ranking.png" />
+    <Resource Include="images\settings.png" />
+  </ItemGroup>
+
+</Project>
