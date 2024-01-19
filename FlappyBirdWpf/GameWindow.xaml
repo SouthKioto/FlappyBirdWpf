@@ -5,20 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FlappyBirdWpf"
         mc:Ignorable="d"
-        Title="GameWindow" Height="450" Width="800"
+        Title="GameWindow" Height="450" Width="400"
         WindowStartupLocation="CenterScreen"
         PreviewKeyDown="BirdUp_KeyDown"
         PreviewKeyUp="BirdDown_KeyUp">
     <Grid Background="DeepSkyBlue">
 
         <Canvas x:Name="GameCanvas" Background="DeepSkyBlue">
-            <Image x:Name="birdImage" Source="images/bird.png" Width="50" Height="50" Canvas.Left="100" Canvas.Top="150"/>
-            
+            <Label x:Name="timerLabel" Content="00:00" Width="100" Height="40" Canvas.Left="150" Canvas.Top="20" FontSize="20"/>
 
-            <Label x:Name="timerLabel" Content="00:00" Width="100" Height="30" Canvas.Left="20" Canvas.Top="20" FontSize="16"/>
+            <Image x:Name="birdImage" Source="images/bird.png" Width="50" Height="50" Canvas.Left="100" Canvas.Top="150"/>
 
             <Image x:Name="ground" Source="images/ground.png" Width="800" Canvas.Top="275" Canvas.Left="0"/>
-        </Canvas>
+            
+            <Image x:Name="pipeTop" Source="images/pipe_up.jpg" Canvas.Left="400" Canvas.Top="250" HorizontalAlignment="Left"/>
+            <Image x:Name="pipeDown" Source="images/pipe_down.jpg" Width="65" Canvas.Left="400" Canvas.Top="-300" HorizontalAlignment="Left"/>
 
+        </Canvas>
     </Grid>
 </Window>
