@@ -14,12 +14,9 @@ namespace FlappyBirdWpf
     {
         private int gravity = 2;
         private int pipeSpeed = 2;
-        private int pipeGap = 200;
-        private int score = 0;
+        private int pipeGap = 100;
+
         private double birdPositionY = 0;
-        private double pipePositionX = 0;
-        private double pipePositionY = 0;
-        private bool isFirstPipeGenerated = false;
 
         private DispatcherTimer timer;
         private TimeSpan elapsedTime;
@@ -28,7 +25,7 @@ namespace FlappyBirdWpf
         {
             InitializeComponent();
             InitializeTimer();
-            GeneratePipe();
+
         }
 
         private void InitializeTimer()
@@ -56,25 +53,22 @@ namespace FlappyBirdWpf
                 GameOver();
             }
 
-            if (!isFirstPipeGenerated || (Canvas.GetLeft(pipeTop) + pipeTop.ActualWidth < 0))
+            if (Canvas.GetLeft(pipeTop) + pipeTop.ActualWidth < 0)
             {
-                GeneratePipe();
-                isFirstPipeGenerated = true;
-            }
+                Canvas.SetLeft(pipeTop, this.Width);
+                Canvas.SetLeft(pipeDown, this.Width);
 
-            pipePositionX -= pipeSpeed;
+                Random random = new Random();
+                double randomHeight = random.Next(-50, (int)this.Height - pipeGap - 50);
+                Canvas.SetTop(pipeTop, randomHeight - pipeTop.ActualHeight);
+                Canvas.SetTop(pipeDown, randomHeight + pipeGap);
+            }
 
             Canvas.SetLeft(pipeTop, Canvas.GetLeft(pipeTop) - pipeSpeed);
             Canvas.SetLeft(pipeDown, Canvas.GetLeft(pipeDown) - pipeSpeed);
 
-            if (Canvas.GetLeft(birdImage) > Canvas.GetLeft(pipeTop) + pipeTop.ActualWidth)
-            {
-                score++;
-            }
-
             timerLabel.Content = elapsedTime.ToString("mm':'ss");
         }
-
 
         private void BirdUp_KeyDown(object sender, KeyEventArgs e)
         {
@@ -98,35 +92,24 @@ namespace FlappyBirdWpf
 
             var answer = MessageBox.Show("Game Over!\nYour time: " + elapsedTime.ToString("mm':'ss") + "\nScore" + score + "\nCzy chcesz rozpocząć ponownie?", "Game Over", MessageBoxButton.YesNo);
 
-            if(answer == MessageBoxResult.Yes)
+            if (answer == MessageBoxResult.Yes)
             {
+                Canvas.SetLeft(pipeTop, this.Width);
+                Canvas.SetLeft(pipeDown, this.Width);
+
+
                 birdPositionY = 0;
                 gravity = 5;
                 elapsedTime = TimeSpan.Zero;
                 timerLabel.Content = "00:00";
                 timer.Start();
             }
-            if(answer == MessageBoxResult.No)
+            if (answer == MessageBoxResult.No)
             {
                 MainWindow main = new MainWindow();
                 main.Show();
                 this.Close();
             }
-        }
-
-        private void GeneratePipe()
-        {
-            Random random = new Random();
-            double randomGap = random.Next(50, 200);
-
-            double pipeTopPositionY = GameCanvas.ActualHeight - ground.ActualHeight - randomGap;
-            double pipeDownPositionY = pipeTopPositionY - pipeGap;
-
-            Canvas.SetRight(pipeTop, randomGap);
-            Canvas.SetTop(pipeTop, pipeTopPositionY);
-
-            Canvas.SetRight(pipeDown, randomGap);
-            Canvas.SetTop(pipeDown, pipeDownPositionY);
         }
 
     }

@@ -11,15 +11,17 @@
         PreviewKeyUp="BirdDown_KeyUp">
     <Grid Background="DeepSkyBlue">
 
-        <Canvas x:Name="GameCanvas" Background="DeepSkyBlue">
+        <Canvas x:Name="GameCanvas" Background="DeepSkyBlue" Width="400" Height="400">
             <Label x:Name="timerLabel" Content="00:00" Width="100" Height="40" Canvas.Left="150" Canvas.Top="20" FontSize="20"/>
+            <Label x:Name="scoreLabel" Content="" Width="100" Height="40" Canvas.Left="150" Canvas.Top="40" FontSize="20"/>
 
             <Image x:Name="birdImage" Source="images/bird.png" Width="50" Height="50" Canvas.Left="100" Canvas.Top="150"/>
 
             <Image x:Name="ground" Source="images/ground.png" Width="800" Canvas.Top="275" Canvas.Left="0"/>
-            
+
             <Image x:Name="pipeTop" Source="images/pipe_up.jpg" Canvas.Left="400" Canvas.Top="250" HorizontalAlignment="Left"/>
-            <Image x:Name="pipeDown" Source="images/pipe_down.jpg" Width="65" Canvas.Left="400" Canvas.Top="-300" HorizontalAlignment="Left"/>
+            <Image x:Name="pipeDown" Source="images/pipe_down.jpg" Width="65" Canvas.Left="476" Canvas.Top="-302" HorizontalAlignment="Left"/>
+            
 
         </Canvas>
     </Grid>
