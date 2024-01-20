@@ -90,7 +90,7 @@ namespace FlappyBirdWpf
         {
             timer.Stop();
 
-            var answer = MessageBox.Show("Game Over!\nYour time: " + elapsedTime.ToString("mm':'ss") + "\nScore" + score + "\nCzy chcesz rozpocząć ponownie?", "Game Over", MessageBoxButton.YesNo);
+            var answer = MessageBox.Show("Game Over!\nYour time: " + elapsedTime.ToString("mm':'ss") + "\nCzy chcesz rozpocząć ponownie?", "Game Over", MessageBoxButton.YesNo);
 
             if (answer == MessageBoxResult.Yes)
             {
