@@ -28,6 +28,7 @@ namespace FlappyBirdWpf
             this.Close();
         }
 
+
         private void DisabledAlert(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("opcja nie dostępna", "Info", MessageBoxButton.OK);
