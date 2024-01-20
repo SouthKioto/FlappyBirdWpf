@@ -21,8 +21,6 @@
 
             <Image x:Name="pipeTop" Source="images/pipe_up.jpg" Canvas.Left="400" Canvas.Top="250" HorizontalAlignment="Left"/>
             <Image x:Name="pipeDown" Source="images/pipe_down.jpg" Width="65" Canvas.Left="476" Canvas.Top="-302" HorizontalAlignment="Left"/>
-            
-
         </Canvas>
     </Grid>
 </Window>
