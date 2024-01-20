@@ -24,6 +24,8 @@
                         <Image Source="images/settings.png" Width="50"/>
                     </Button>
                     <TextBlock Text="JEBAĆ KURWA SZWEDÓW"/>
+                    <TextBlock Text="nienawidzę ich"/>
+                    
                 </StackPanel>
 
                 <StackPanel HorizontalAlignment="Center"
