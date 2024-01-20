@@ -23,11 +23,6 @@
                             Click="DisabledAlert">
                         <Image Source="images/settings.png" Width="50"/>
                     </Button>
-                    <TextBlock Text="JEBAĆ KURWA SZWEDÓW"/>
-                    <TextBlock Text="nienawidzę ich"/>
-                    <TextBlock Text="skibididubb dub dub yes yes"/>
-
-
                 </StackPanel>
 
                 <StackPanel HorizontalAlignment="Center"

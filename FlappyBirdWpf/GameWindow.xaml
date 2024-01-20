@@ -10,7 +10,6 @@
         PreviewKeyDown="BirdUp_KeyDown"
         PreviewKeyUp="BirdDown_KeyUp">
     <Grid Background="DeepSkyBlue">
-
         <Canvas x:Name="GameCanvas" Background="DeepSkyBlue" Width="400" Height="400">
             <Label x:Name="timerLabel" Content="00:00" Width="100" Height="40" Canvas.Left="150" Canvas.Top="20" FontSize="20"/>
             <Label x:Name="scoreLabel" Content="" Width="100" Height="40" Canvas.Left="150" Canvas.Top="40" FontSize="20"/>
