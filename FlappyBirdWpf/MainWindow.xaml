@@ -42,7 +42,6 @@
                             BorderBrush="Transparent">
                         <Image Source="images/ranking.png" Width="50"/>
                     </Button>
-                    <Label Content="XD"/>
                 </StackPanel>
             </StackPanel>
         </Border>

@@ -27,7 +27,6 @@ namespace FlappyBirdWpf
         {
             InitializeComponent();
             InitializeTimer();
-
         }
 
         private void InitializeTimer()
@@ -57,7 +56,6 @@ namespace FlappyBirdWpf
                     GameOver();
                 }
 
-
                 if (Canvas.GetLeft(pipeTop) + pipeTop.ActualWidth < 0)
                 {
                     Canvas.SetLeft(pipeTop, this.Width);
@@ -82,7 +80,7 @@ namespace FlappyBirdWpf
             if (e.Key == Key.Space)
             {
                 isSpacePressed = true;
-                gravity = -15;
+                gravity = -5;
             }
         }
 
@@ -90,7 +88,7 @@ namespace FlappyBirdWpf
         {
             if (e.Key == Key.Space)
             {
-                gravity = 15;
+                gravity = 5;
             }
         }
 
@@ -120,6 +118,5 @@ namespace FlappyBirdWpf
                 this.Close();
             }
         }
-
     }
 }
