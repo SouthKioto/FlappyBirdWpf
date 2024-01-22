@@ -9,7 +9,7 @@
         WindowStartupLocation="CenterScreen">
     <StackPanel>
         <TextBlock Text="Stupid bird"
-                   FontSize="50"
+                   FontSize="60"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"/>
 
