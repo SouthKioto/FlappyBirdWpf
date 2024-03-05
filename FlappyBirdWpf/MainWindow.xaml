@@ -38,7 +38,7 @@
                 <StackPanel HorizontalAlignment="Right"
                         VerticalAlignment="Bottom">
                     <Button Background="Transparent"
-                            Click="DisabledAlert"
+                            Click="GoToRankingPage"
                             BorderBrush="Transparent">
                         <Image Source="images/ranking.png" Width="50"/>
                     </Button>

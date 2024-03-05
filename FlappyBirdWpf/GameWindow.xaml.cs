@@ -1,5 +1,8 @@
-﻿using System;
+﻿using FlappyBirdWpf.Classes;
+using Newtonsoft.Json;
+using System;
 using System.Drawing;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -97,6 +100,7 @@ namespace FlappyBirdWpf
             timer.Stop();
 
             var answer = MessageBox.Show("Game Over!\nYour time: " + elapsedTime.ToString("mm':'ss") + "\nCzy chcesz rozpocząć ponownie?", "Game Over", MessageBoxButton.YesNo);
+            SaveScoreJson(elapsedTime.ToString("mm':'ss"));
 
             if (answer == MessageBoxResult.Yes)
             {
@@ -118,5 +122,51 @@ namespace FlappyBirdWpf
                 this.Close();
             }
         }
+
+        private void SaveScoreJson(string time)
+        {
+            string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "scoring_data.json");
+
+            if (!File.Exists(filePath))
+            {
+                var scoreData = new
+                {
+                    LastBestScore = time,
+                    BestScore = time
+                };
+
+                string jsonData = JsonConvert.SerializeObject(scoreData);
+                File.WriteAllText(filePath, jsonData);
+            }
+            else
+            {
+                string jsonData = File.ReadAllText(filePath);
+                var scoreData = JsonConvert.DeserializeObject<ScoreData>(jsonData);
+
+                if (TimeSpan.Parse(time) > TimeSpan.Parse(scoreData.BestScore))
+                {
+                    var newScoreData = new
+                    {
+                        LastBestScore = time,
+                        BestScore = time,
+                    };
+
+                    string updatedJsonData = JsonConvert.SerializeObject(newScoreData);
+                    File.WriteAllText(filePath, updatedJsonData);
+                }
+                else
+                {
+                    var newScoreData = new
+                    {
+                        LastBestScore = time,
+                        BestScore = scoreData.BestScore
+                    };
+
+                    string updatedJsonData = JsonConvert.SerializeObject(newScoreData);
+                    File.WriteAllText(filePath, updatedJsonData);
+                }
+            }
+        }
+
     }
 }

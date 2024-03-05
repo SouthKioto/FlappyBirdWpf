@@ -1,0 +1,46 @@
+﻿<Window x:Class="FlappyBirdWpf.YourScore"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlappyBirdWpf"
+        mc:Ignorable="d"
+        Title="YourScore" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+
+        <StackPanel Grid.Column="0">
+            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center">
+                <Label Content="Your Last Best Score" 
+                   FontSize="20"/>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Label x:Name="lastbestScore"
+                   FontSize="20"/>
+            </StackPanel>
+
+            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center">
+                <Label Content="Your Best Score" 
+                   FontSize="20"/>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Label x:Name="bestScore"
+                   FontSize="20"/>
+            </StackPanel>
+
+        </StackPanel>
+       
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+            <Button Content="Powrot" Click="BackToMainPage"/>
+        </StackPanel>
+    </Grid>
+</Window>

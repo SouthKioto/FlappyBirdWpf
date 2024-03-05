@@ -33,5 +33,12 @@ namespace FlappyBirdWpf
         {
             MessageBox.Show("opcja nie dostępna", "Info", MessageBoxButton.OK);
         }
+
+        private void GoToRankingPage(object sender, RoutedEventArgs e)
+        {
+            YourScore score = new YourScore();
+            score.Show();
+            this.Close();
+        }
     }
 }
